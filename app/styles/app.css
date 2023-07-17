@@ -12,6 +12,20 @@ body {
     background-repeat: no-repeat;
 }
 
+.page-link {
+    font-family: 'Source Code Pro', monospace;
+    text-transform: uppercase;
+    border: 0;
+    background-color: #FFF;
+    text-decoration: none;
+    padding: 1rem 2rem;
+}
+
+nav {
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+
 .container {
     display: flex;
     flex-direction: column;
