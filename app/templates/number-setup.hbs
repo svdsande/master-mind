@@ -1,0 +1,24 @@
+{{page-title "NumberSetup"}}
+
+<h3 class="sub-title">Code kraker setup</h3>
+
+<form class="code-form-container">
+    <div class="code-input-container">
+        <div class="code-input-group">
+            <Input @value={{this.firstNumber}} class="number-code-input" maxlength="1" id="first-number"/>
+            <label for="first-number">1.</label>
+        </div>
+        <div class="code-input-group">
+            <Input @value={{this.secondNumber}} class="number-code-input" maxlength="1" id="second-number"/>
+            <label for="second-number">2.</label>
+        </div>
+        <div class="code-input-group">
+            <Input @value={{this.thirdNumber}} class="number-code-input" maxlength="1" id="third-number"/>
+            <label for="third-number">3.</label>
+        </div>
+    </div>
+
+    <LinkTo @route="number-code" @query={{hash code="asc"}}>Sort</LinkTo>
+    <button type="button" class="submit-button" {{on "click" this.submit}}>Submit code</button>
+</form>
+{{outlet}}

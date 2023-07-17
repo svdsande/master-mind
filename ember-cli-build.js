@@ -4,6 +4,9 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
+    minifyCSS: {
+      options: { processImport: true },
+    },
     // Add options here
   });
 
@@ -19,6 +22,8 @@ module.exports = function (defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
+
+  app.import('node_modules/animate.css/animate.min.css');
 
   return app.toTree();
 };

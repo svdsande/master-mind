@@ -1,0 +1,69 @@
+{{page-title "ColorSetup"}}
+
+<h3 class="sub-title">Kleuren kraker setup</h3>
+
+<form class="code-form-container">
+        <div class="code-input-container">
+            <div class="code-input-group">
+                <select name="colors" id="first-number" {{on "change" this.setFirstColor}}>
+                    <option class="red-option" value="rood">Rood</option>
+                    <option class="blue-option" value="donker-blauw">Donker blauw</option>
+                    <option class="blue-option" value="licht-blauw">Licht blauw</option>
+                    <option class="green-option" value="groen">Groen</option>
+                    <option class="yellow-option" value="geel">Geel</option>
+                    <option class="purple-option" value="paars">Paars</option>
+                    <option class="pink-option" value="roze">Roze</option>
+                    <option class="black-option" value="zwart">Zwart</option>
+                </select>
+                <label for="first-number">1.</label>
+            </div>
+            <div class="code-input-group">
+                <select name="colors" id="second-number" {{on "change" this.setSecondColor}}>
+                    <option class="red-option" value="rood">Rood</option>
+                    <option class="blue-option" value="donker-blauw">Donker blauw</option>
+                    <option class="blue-option" value="licht-blauw">Licht blauw</option>
+                    <option class="green-option" value="groen">Groen</option>
+                    <option class="yellow-option" value="geel">Geel</option>
+                    <option class="purple-option" value="paars">Paars</option>
+                    <option class="pink-option" value="roze">Roze</option>
+                    <option class="black-option" value="zwart">Zwart</option>
+                </select>
+                <label for="second-number">2.</label>
+            </div>
+            <div class="code-input-group">
+                <select name="colors" id="third-number" {{on "change" this.setThirdColor}}>
+                    <option class="red-option" value="rood">Rood</option>
+                    <option class="blue-option" value="donker-blauw">Donker blauw</option>
+                    <option class="blue-option" value="licht-blauw">Licht blauw</option>
+                    <option class="green-option" value="groen">Groen</option>
+                    <option class="yellow-option" value="geel">Geel</option>
+                    <option class="purple-option" value="paars">Paars</option>
+                    <option class="pink-option" value="roze">Roze</option>
+                    <option class="black-option" value="zwart">Zwart</option>
+                </select>
+                <label for="third-number">3.</label>
+            </div>
+            <div class="code-input-group">
+                <select name="colors" id="fourth-number" {{on "change" this.setFourthColor}}>
+                    <option class="red-option" value="rood">Rood</option>
+                    <option class="blue-option" value="donker-blauw">Donker blauw</option>
+                    <option class="blue-option" value="licht-blauw">Licht blauw</option>
+                    <option class="green-option" value="groen">Groen</option>
+                    <option class="yellow-option" value="geel">Geel</option>
+                    <option class="purple-option" value="paars">Paars</option>
+                    <option class="pink-option" value="roze">Roze</option>
+                    <option class="black-option" value="zwart">Zwart</option>
+                </select>
+                <label for="fourth-number">4.</label>
+            </div>
+        </div>
+
+         <div class="code-input-group">
+            <label for="secret-number">Nummer na maken code:</label>
+            <Input @value={{this.number}} class="number-code-input" maxlength="1" id="secret-number"/>
+        </div>
+
+        <button type="button" class="submit-button" {{on "click" this.submit}}>Submit code</button>
+    </form>
+
+{{outlet}}

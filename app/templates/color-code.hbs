@@ -1,0 +1,78 @@
+{{page-title "ColorCode"}}
+
+<h3 class="sub-title">Kleuren kraker</h3>
+{{#if this.codeIsCorrect}}
+<div class="code-correct">
+    <h3>Code is gekraakt</h3>
+    <p>Goed gedaan! Jullie krijgen nu het volgende cijfer: {{this.number}}</p>
+</div>
+{{else}}
+    <form class="code-form-container">
+        <div class="code-input-container">
+            <div class="code-input-group">
+                <select name="colors" id="first-number" {{on "change" this.setFirstColor}}>
+                    <option class="red-option" value="rood">Rood</option>
+                    <option class="blue-option" value="donker-blauw">Donker blauw</option>
+                    <option class="blue-option" value="licht-blauw">Licht blauw</option>
+                    <option class="green-option" value="groen">Groen</option>
+                    <option class="yellow-option" value="geel">Geel</option>
+                    <option class="purple-option" value="paars">Paars</option>
+                    <option class="pink-option" value="roze">Roze</option>
+                    <option class="black-option" value="zwart">Zwart</option>
+                </select>
+                <label for="first-number">1.</label>
+            </div>
+            <div class="code-input-group">
+                <select name="colors" id="second-number" {{on "change" this.setSecondColor}}>
+                    <option class="red-option" value="rood">Rood</option>
+                    <option class="blue-option" value="donker-blauw">Donker blauw</option>
+                    <option class="blue-option" value="licht-blauw">Licht blauw</option>
+                    <option class="green-option" value="groen">Groen</option>
+                    <option class="yellow-option" value="geel">Geel</option>
+                    <option class="purple-option" value="paars">Paars</option>
+                    <option class="pink-option" value="roze">Roze</option>
+                    <option class="black-option" value="zwart">Zwart</option>
+                </select>
+                <label for="second-number">2.</label>
+            </div>
+            <div class="code-input-group">
+                <select name="colors" id="third-number" {{on "change" this.setThirdColor}}>
+                    <option class="red-option" value="rood">Rood</option>
+                    <option class="blue-option" value="donker-blauw">Donker blauw</option>
+                    <option class="blue-option" value="licht-blauw">Licht blauw</option>
+                    <option class="green-option" value="groen">Groen</option>
+                    <option class="yellow-option" value="geel">Geel</option>
+                    <option class="purple-option" value="paars">Paars</option>
+                    <option class="pink-option" value="roze">Roze</option>
+                    <option class="black-option" value="zwart">Zwart</option>
+                </select>
+                <label for="third-number">3.</label>
+            </div>
+            <div class="code-input-group">
+                <select name="colors" id="fourth-number" {{on "change" this.setFourthColor}}>
+                    <option class="red-option" value="rood">Rood</option>
+                    <option class="blue-option" value="donker-blauw">Donker blauw</option>
+                    <option class="blue-option" value="licht-blauw">Licht blauw</option>
+                    <option class="green-option" value="groen">Groen</option>
+                    <option class="yellow-option" value="geel">Geel</option>
+                    <option class="purple-option" value="paars">Paars</option>
+                    <option class="pink-option" value="roze">Roze</option>
+                    <option class="black-option" value="zwart">Zwart</option>
+                </select>
+                <label for="fourth-number">4.</label>
+            </div>
+        </div>
+
+        {{#if this.codeIsIncorrect}}
+            <div class="code-incorrect">
+                <h3>Kleuren zijn fout</h3>
+                <p>{{this.exactMatches}} {{if this.singleExactColorMatch "kleur" "kleuren"}} op de juiste plek {{this.exactMatchedColors}}</p>
+                <p>{{this.colorMatches}} {{if this.singleColorMatch "kleur" "kleuren"}} wel in de code maar onjuiste plek {{this.colorMatchedColors}}</p>
+            </div>
+        {{/if}}
+
+        <button type="button" class="submit-button" {{on "click" this.checkCode}}>Check code</button>
+    </form>
+
+    {{outlet}}
+{{/if}}

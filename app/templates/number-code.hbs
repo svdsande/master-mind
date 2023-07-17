@@ -1,0 +1,37 @@
+{{page-title "NumberCode"}}
+
+<h3 class="sub-title">Code kraker</h3>
+
+{{#if this.codeIsCorrect}}
+<div class="code-correct">
+    <h3>Code is bijna gekraakt</h3>
+    <p>De nummers zijn allemaal aanwezig maar niet in de goede volgorde</p>
+    <p>Volgens mijn hackprogramma is de code: {{this.code}}</p>
+</div>
+{{else}}
+    <form class="code-form-container">
+        <div class="code-input-container">
+            <div class="code-input-group">
+                <Input @value={{this.firstNumber}} class="number-code-input animate__animated {{if this.codeIsIncorrect "animate__shakeX"}}" maxlength="1" id="first-number"/>
+                <label for="first-number">1.</label>
+            </div>
+            <div class="code-input-group">
+                <Input @value={{this.secondNumber}} class="number-code-input animate__animated {{if this.codeIsIncorrect "animate__shakeX"}}" maxlength="1" id="second-number"/>
+                <label for="second-number">2.</label>
+            </div>
+            <div class="code-input-group">
+                <Input @value={{this.thirdNumber}} class="number-code-input animate__animated {{if this.codeIsIncorrect "animate__shakeX"}}" maxlength="1" id="third-number"/>
+                <label for="third-number">3.</label>
+            </div>
+        </div>
+        {{#if this.codeIsIncorrect}}
+            <div class="code-incorrect">
+                <h3>Cijfers zijn fout</h3>
+                <p>Probeer het nog een keer.</p>
+            </div>
+        {{/if}}
+        <button type="button" class="submit-button" {{on "click" this.checkCode}}>Check code</button>
+    </form>
+
+    {{outlet}}
+{{/if}}
