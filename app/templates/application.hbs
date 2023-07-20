@@ -5,11 +5,11 @@
         <h1 class="page-title animate__animated animate__fadeInUp">Master Mind</h1>
     </header>
 
-    <nav>
-        <LinkTo @route="color-code" class="page-link">Kleur code</LinkTo>
-        <LinkTo @route="number-code" class="page-link">Cijfer code</LinkTo>
-    </nav>
     <div class="content-container">
         {{outlet}}
     </div>
+    <nav class="page-nav">
+        <LinkTo @route="color-code" class="page-link">Kleur code</LinkTo>
+        <LinkTo @route="number-code" class="page-link">Cijfer code</LinkTo>
+    </nav>
 </div>
